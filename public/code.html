@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<script
+		src="https://code.jquery.com/jquery-3.3.1.js"
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous">
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel='stylesheet' href='/stylesheets/style.css'>
+		<script src="/javascripts/code.js" defer></script>
+		<script src='/javascripts/script.js' defer></script>
+	</head>
+	<body onload="checkParams()">
+		<div v-show='pageReady' id='pagecontent'>
+			<div class='code-wrapper'>
+                <div class='code-box'>
+                    Enter Location Code:
+                    <div class='input-box'>
+                        <input id='code' type='text'>
+                        <button onclick='checkin()' class='go-btn'></button>
+                    </div>
+                </div>
+                <div id='checkin-status'>
+                </div>
+			</div>
+		</div>
+	</body>
+</html>

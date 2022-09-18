@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<title>
+			COVID19 Contact Tracing
+		</title>
+		<script
+		src="https://code.jquery.com/jquery-3.3.1.js"
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous">
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<script src="https://apis.google.com/js/api.js" async defer></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel='stylesheet' href='/stylesheets/style.css'>
+		<script src='/javascripts/script.js' defer></script>
+		<script src='/javascripts/login.js' defer></script>
+		<script src='/javascripts/search_user.js' defer></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvf8B9OmlLsJQCsYQB1wMR7yB6QI7q2Bc&callback=initMap" defer>
+		</script>
+	</head>
+	<body>
+		<div v-show='pageReady' id='pagecontent'>
+			<div id='admin-header'>
+				<p>
+				    <span>You are viewing the history of:  </span>
+				    '<span class='g_name'></span>
+				    <span> </span>
+				    <span class='f_name'></span>'
+				</p>
+				<a class='right-btn' href='/search.html'></a>
+			</div>
+			<div class='account-wrapper'>
+				<div>
+					<div class='account-box'>
+						<h3>
+							GIVEN NAME
+						</h3>
+						<p class='g_name'></p>
+					</div>
+					<div class='account-box'>
+						<h3>
+							FAMILY NAME
+						</h3>
+						<p class='f_name'></p>
+					</div>
+					<div class='account-box'>
+						<h3>
+							EMAIL
+						</h3>
+						<p class='email'></p>
+					</div>
+				</div>
+				<div class='exposed'></div>
+			</div>
+			<div class='history-wrapper'>
+				<div id='checkin-records' class='history-half'>
+					<div class='history-header'>
+						All Records
+					</div>
+				</div>
+				<div id='exposure-records' class='history-half'>
+					<div class='history-header'>
+						Possible Exposures
+					</div>
+				</div>
+			</div>
+			<div class='map-wrapper'>
+				<div id='map' class='map'>
+				</div>
+			</div>
+			<div class='btm-btns'>
+				<button class='flag-user hide' onclick="flagUser()"></button>
+				<!-- Confirmation window, hidden by default -->
+				<div class="popup">
+					<div class="popup-content">
+				    	<p>
+				    		Flag this user ONLY IF covid-19 infection is confirmed! Flagging will automatically alert all recent exposures. Proceed?
+				    	</p>
+			    		<button class="btn3" onclick="cancel()">No</button>
+			    		<button class="btn3" onclick="cfmFlag()">Yes</button>
+				    </div>
+				</div>
+
+				<button class='green-btn unflag hide' onclick="unflag()"></button>
+				<!-- Confirmation window, hidden by default -->
+				<div class="popup">
+					<div class="popup-content">
+				    	<p>
+				    		Un-flagging means this user no longer has covid-19. Proceed?
+				    	</p>
+			    		<button class="btn3" onclick="cancel()">No</button>
+			    		<button class="btn3" onclick="cfmUnflag()">Yes</button>
+				    </div>
+				</div>
+
+				<button class='green-btn add-admin' onclick="addAdmin()"></button>
+				<!-- Confirmation window, hidden by default -->
+				<div class="popup">
+					<div class="popup-content">
+				    	<p>
+				    		<span>Make </span>
+				    		<span class='g_name'></span>
+				    		<span> </span>
+				    		<span class='f_name'></span>
+				    		<span> an admin?</span>
+				    	</p>
+			    		<button class="btn3" onclick="cancel()">No</button>
+			    		<button class="btn3" onclick="cfmAdmin()">Yes</button>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

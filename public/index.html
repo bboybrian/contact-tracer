@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			COVID19 Tracing
+		</title>
+		<script
+		src="https://code.jquery.com/jquery-3.3.1.js"
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous">
+		</script>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<link rel='stylesheet' href='/stylesheets/style.css'>
+		<script src='/javascripts/script.js' defer></script>
+		<script src='/javascripts/index.js' defer></script>
+	</head>
+	<body>
+		<div v-show='pageReady' id='pagecontent'>
+			<div v-show='!validSession' class='login-box'>
+				<p>
+					Login to <font color='red'>Check-In</font> & receive notifications
+				</p>
+				<a href="./login.html" class='button2'>Sign In</a>
+			</div>
+			<div v-show='validSession' class='welcome-home'>
+				<div class='welcome-bar'>
+					WELCOME, {{ user['given_name'] }} {{ user['family_name'] }}
+				</div>
+				<div class='welcome-tablist'>
+					<a class='welcome-tab' href='./code.html'>
+						<p>
+							Check-in with code
+						</p>
+					</a>
+					<!--Update info from history page-->
+					<a class='welcome-tab' href='./history.html'>
+						<p>
+							Profile
+						</p>
+					</a>
+					<a class='welcome-tab' href='./register_location.html'>
+						<p>
+							Register a Venue
+						</p>
+					</a>
+				</div>
+			</div>
+			<div id='alerts' class='alert-box'>
+				<h3>
+					Swab Test
+				</h3>
+				<p>
+					You have recently visited an area of possible exposure, please proceed to your nearest covid checking station or book a slot at <a href='http://www.example.com'>www.example.com</a>.
+				</p>
+			</div>
+			<div id='updates' class='update-box'>
+				<h1>
+					Updates
+				</h1>
+			</div>
+		</div>
+	</body>
+</html>

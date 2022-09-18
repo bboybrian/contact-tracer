@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<title>
+			COVID19 Contact Tracing
+		</title>
+		<script
+		src="https://code.jquery.com/jquery-3.3.1.js"
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous">
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<script src="https://apis.google.com/js/api.js" async defer></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta name="google-signin-client_id" content="1099048101998-stvtqj8odtghnq4262pem2php95d5dfr.apps.googleusercontent.com">
+		<link rel='stylesheet' href='/stylesheets/style.css'>
+		<script src='/javascripts/script.js' defer></script>
+		<script src='/javascripts/login.js' defer></script>
+		<script src='/javascripts/history.js' defer></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvf8B9OmlLsJQCsYQB1wMR7yB6QI7q2Bc&callback=initMap" defer>
+		</script>
+	</head>
+	<body>
+		<div v-show='pageReady' id='pagecontent'>
+			<div class='account-wrapper'>
+				<div>
+					<div class='account-box'>
+						<h3>
+							GIVEN NAME
+						</h3>
+						<div id='g_name'>
+							{{ user['given_name'] }}
+						</div>
+					</div>
+					<div class='account-box'>
+						<h3>
+							FAMILY NAME
+						</h3>
+						<div id='f_name'>
+							{{ user['family_name'] }}
+						</div>
+					</div>
+					<div class='account-box'>
+						<h3>
+							EMAIL
+						</h3>
+						<div id='email'>
+							{{ user['email'] }}
+						</div>
+					</div>
+					<span id='update_info'>
+						<button class='btn2' onclick='updateInfo()'>Update Info</button>
+					</span>
+					<button class='btn2' onclick='signOut()'>Sign Out</button>
+				</div>
+				<div class='exposed'>
+					<img v-if="user['exposed']" style='width:100%' src='/images/covid-19.png'>
+					<img v-else style='width:100%' src='/images/novid-19.png'>
+				</div>
+			</div>
+			<div class='history-wrapper'>
+				<div id='checkin-records' class='history-half'>
+					<div class='history-header'>
+						All Records
+					</div>
+				</div>
+				<div id='exposure-records' class='history-half'>
+					<div class='history-header'>
+						Possible Exposures
+					</div>
+				</div>
+			</div>
+			<div class='map-wrapper'>
+				<div id='map' class='map'>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

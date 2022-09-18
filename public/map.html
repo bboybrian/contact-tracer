@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<script
+		src="https://code.jquery.com/jquery-3.3.1.js"
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous">
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<link rel='stylesheet' href='/stylesheets/style.css'>
+		<script src='/javascripts/script.js' defer></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<script src='/javascripts/map.js' defer></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvf8B9OmlLsJQCsYQB1wMR7yB6QI7q2Bc&callback=initMap" defer>
+		</script>
+	</head>
+	<body>
+		<div v-show='pageReady' id='pagecontent'>
+			<div class='map-wrapper'>
+			    <div id='map' class='map'>
+			    </div>
+				<div id='m-info' class='map-info'>
+					<div>
+						<div id='m-name'>
+							Venue Name
+						</div>
+						<div id='m-address'>
+							Address
+						</div>
+						<div id='m-pos'>
+							Latitude, Longitude
+						</div>
+					</div>
+					<button id='checkinbtn'>
+						Check In
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

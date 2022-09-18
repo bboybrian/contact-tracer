@@ -1,0 +1,96 @@
+video plan
+(Start with one Update: "App Launched","UG117's COVID-19 web app is now up and running")
+
+- User X is an admin and a venue owner, unregistered as of now
+    Hi, I'm Zac, administrator of this contact tracing server, and the proud owner of McDonalds
+    I'm gonna log in with gmail, to register McDonalds as a location.
+
+- On his PC, X logs in with gmail (1)
+- X registers his venue, and sees the map-marker appear (6, 5)
+    This marker shows the location that I just registered.
+    Not only can users check-in by clicking on the marker, but the color of the marker tells them which locations are hotspots.
+    As more people visit a location, the marker turns orange, then red.
+    I'm already here at my McDonalds, so I'm gonna go ahead and check-in.
+
+- X checks-in using the map marker (2c)
+- From the 'Profile' drop-down, X views and edits the name of his venue (9)
+    If I had made a mistake when registering my location, I could fix it easily from here.
+
+- X updates his particulars in the profile page, and scrolls down to see his check-in marker on the map (3, 4b)
+    Since I logged in with gmail, my name in the database is currently incorrect
+    *edits name* That's better
+
+- X creates a new update, reminding everyone to wash their hands (15)
+    As a responsible admin, I can add, edit, or delete updates.
+
+- X edits the update, and deletes the 'App Launched' update (15)
+    *edits update* That's better
+    *deletes update* Anndd, we don't need this one
+
+
+
+- User Y is a friend of X, & currently a regular user
+    Hi, I'm Brian, friend of Zac, and a regular user of this contact tracing server
+    I haven't actually made an account yet, so I need to sign up
+
+- On his phone, Y signs up & logs in without gmail (1)
+- Y checks-in to X's venue using the QR code (2b)
+    Now that I have an account, I can finally try out Zac's Mcdonalds
+    *scans QR code* I could check-in with the location code, but it's much easier to use a QR scanner
+
+- From the burger menu, Y views his history: 'NOVID-19, no exposures' (16)
+    There, I've checked-in, it's in my history
+    //omnomnom
+
+
+
+- Y has contracted covid-19
+    (X:) Guys, we have a problem. Brian has covid-19
+
+- X searches for Y by name (11)
+    Although this means that I will have to get tested, I have to be responsible & flag Brian.
+
+- X flags Y (12)
+- X makes Y an admin (13)
+    Just for demonstration purposes, I'm gonna make him an admin
+
+- X searches for his venue, and it shows the exposure to Y (10)
+- X showcases the "Add Exposure" button, in the case where Y forgot to check-in (14)
+- On the home screen, X sees the swab-test alert & the new update (7, 8)
+
+- Both X & Y have been confirmed healthy
+- Y searches for & unflags X (both flag buttons are visible) (12)
+- Y searches for & unflags himself (12)
+- Y signs out (1)
+
+
+
+All users can:
+    1. Login with gmail
+    2a. Check-in with code
+    2b. Check-in with QR
+    2c. Check-in from map
+    3. View & update particulars
+    4a. View check-in history & possible covid-19 exposures
+    4b. View check-in history on a map
+    5. View hostpots on map (green - orange - red)
+    6. Register a venue
+    7. Receive alert when exposed
+    8. View server-wide notifications: 'Updates'
+
+Venue owners can:
+    9. View & update venue info
+    10. View check-in history & possible covid-19 exposures (of each venue)
+
+Admins/Health officials can:
+    11. Access profile of users/venues from search bar
+    12. Flag & unflag users to confirm covid infection/ healthy
+    13. Register a fellow admin
+    14. Add an exposure timeframe to a venue
+    15. Add/edit/delete updates
+
+Extras:
+    16. Mobile friendly burger menu
+
+
+

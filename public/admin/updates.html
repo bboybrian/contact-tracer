@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			COVID19 Tracing
+		</title>
+		<script
+		src="https://code.jquery.com/jquery-3.3.1.js"
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous">
+		</script>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<link rel='stylesheet' href='../stylesheets/style.css'>
+		<script src='../javascripts/script.js' defer></script>
+		<script src='/javascripts/updates.js' defer></script>
+	</head>
+	<body>
+		<div v-show='pageReady' id='pagecontent'>
+			<div id='admin-bar'>
+    			<div class="blue-triangle"></div>
+    			<div class='blue-bar'></div>
+    		</div>
+			<div v-show='!validSession' class='login-box'>
+				<p>
+					Login to <font color='red'>Check-In</font> & receive notifications
+				</p>
+				<a href="./login.html"><button class='button2'>Sign In</button></a>
+			</div>
+			<div v-show='validSession' class='welcome-home'>
+    			<div class='welcome-bar'>
+    				UPDATES
+    				<button class='plus-btn' onclick='addUpdate()'>+</button>
+    			</div>
+    		</div>
+    		<div id='newUpdate' class='hide'>
+    		    <div class='update-wrapper'>
+    		        <div class='update-box2'>
+        				<input id='updateHeader' placeholder='Title'>
+    				</div>
+        			<div class='update-box2'>
+        				<textarea id='updateContent' rows = "5" placeholder='Enter details here...'></textarea>
+        			</div>
+        			<button onclick='submit()'>Submit</button>
+    		    </div>
+    		</div>
+			<div id='updates'>
+			</div>
+		</div>
+	</body>
+</html>

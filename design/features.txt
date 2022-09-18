@@ -1,0 +1,47 @@
+All users can:
+    - Login with google account -
+    1. Check-in
+        a. with location code (form)
+        b. QR code (camera scan)
+        - After checking in -
+        -> Check-out option appears
+    2. Receive alerts
+        a. Green tick symbol if there are no alerts
+        b. Red circle if there are alerts
+        c. Alerts are displayed below buttons
+    3. Update particulars (form)
+    4. View history
+        a. Date & time in/out for all places visited in past 30 days
+        b. Automatic flagging of visits that coincide with (confirmed) infected people
+    5. View map
+        a. Red marker for hotspots, blue marker for recent visits
+        b. Red marker is taller than blue marker, so users can easily see if red & blue are in the same place
+    6. Register a venue
+        a. Provide venue name & address
+        b. Records user as venue owner
+        c. Generates location code & QR code of venue for visitors to check-in
+
+Venue owners can:
+    1. View history of each venue they own
+        a. Similarly, past 30 days & automatic flagging.
+    2. Edit venue name & address
+
+Admins/Health officials can:
+    1. Access history of users/venues
+        a. Enter ID of user/venue
+        - While viewing their history -
+        -> Flag button appears
+            Flagging a user/venue automatically alerts all exposures within the past 14 days
+                >> A flagged user will continue to alert any exposures after being flagged
+                >> A flagged venue will only alert exposures once, when flagged (re-flagging will alert another round)
+    2. Register a fellow admin
+        (This person must already have an account)
+        a. Provide user ID
+        b. Provide user name for confirmation(?)
+        c. Success screen
+
+TBD:
+    1. Delete venue option?
+    2. Venue owners see user ID or name?
+    3. More options under 'Flag' such as "Call user for check-up"?
+    3. Move "Register a venue" button to the side-menu & have the side-menu show up from the start?

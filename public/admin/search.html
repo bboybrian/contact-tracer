@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- A search bar, returns all users & venues that match the query-->
+<html>
+    <head>
+	    <title>
+	        COVID19 Tracing
+	    </title>
+	    <script
+			src="https://code.jquery.com/jquery-3.3.1.js"
+			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			crossorigin="anonymous">
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel='stylesheet' href='/stylesheets/style.css'>
+		<script src='/javascripts/search.js' defer></script>
+		<script src='/javascripts/script.js' defer></script>
+    </head>
+    <body>
+	<div v-show='pageReady' id='pagecontent'>
+		<div id='admin-bar'>
+			<div class="blue-triangle"></div>
+			<div class='blue-bar'></div>
+		</div>
+		<div class='code-wrapper'>
+            <div class='code-box'>
+                Search by ID or name:
+                <div class='input-box'>
+                    <input type='text' id = 'query'>
+                    <button class='go-btn' onclick="search()"></button>
+                </div>
+            </div>
+            <div class='results'>
+            	<h3>
+            		Users
+            		<span id='user-count' class='result-count'></span>
+            		<button onclick="toggle(this, '#user-results')">Show</button>
+            	</h3>
+				<div id='user-results' class='list-reveal'>
+				</div>
+				<h3>
+					Venues
+					<span id='venue-count' class='result-count'></span>
+					<button onclick="toggle(this, '#venue-results')">Show</button>
+				</h3>
+				<div id='venue-results' class='list-reveal'>
+				</div>
+            </div>
+		</div>
+	</div>
+    </body>
+</html>
